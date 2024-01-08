@@ -9,7 +9,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
-  password: "123456",
+  password: "root",
   port: 5432,
 });
 
@@ -22,7 +22,7 @@ let quiz = [
 ];
 
 db.query("SELECT * FROM capitals", (err, res) => {
-  if (err) {
+  if (err){
     console.error("Error executing query", err.stack);
   } else {
     quiz = res.rows;
